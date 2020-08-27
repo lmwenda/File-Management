@@ -8,14 +8,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
         // Question to open the Program
         System.out.println("Do you want to start the File Management?");
 
         // Creating the Input
         Scanner sc = new Scanner(System.in);
         String scanned = sc.next();
-
         // Answer Handling
         if (scanned.equals("Yes")) {
             System.out.println("Start a Command: ");
@@ -33,23 +31,23 @@ public class Main {
                 System.out.println("Re-run the program choose a Command again");
             }
 
-            if (answer.equals("!fileInformation")){
-                try{
-                File myObj = new File("filename.txt");
-                if (myObj.exists()) {
-                    System.out.println("File name: " + myObj.getName());
-                    System.out.println("Absolute path: " + myObj.getAbsolutePath());
-                    System.out.println("Writeable: " + myObj.canWrite());
-                    System.out.println("Readable " + myObj.canRead());
-                    System.out.println("File size in bytes " + myObj.length());
-                } else {
-                    System.out.println("The file does not exist.");
-                }
-            }
-                catch (Exception e){
+            if (answer.equals("!fileInformation")) {
+                try {
+                    File myObj = new File("filename.txt");
+                    if (myObj.exists()) {
+                        System.out.println("File name: " + myObj.getName());
+                        System.out.println("Absolute path: " + myObj.getAbsolutePath());
+                        System.out.println("Writeable: " + myObj.canWrite());
+                        System.out.println("Readable " + myObj.canRead());
+                        System.out.println("File size in bytes " + myObj.length());
+                    } else {
+                        System.out.println("The file does not exist.");
+                    }
+                } catch (Exception e) {
                     System.out.println("An error occurred.");
                     e.printStackTrace();
                 }
+            }
 
             if (answer.equals("!createFile")) {
                 //  File createFile = new File()
@@ -88,6 +86,7 @@ public class Main {
                 } catch (Exception e) {
                     System.out.println(e);
                 }
+            }
 
             if(answer.equals("!read")){
                 try{
@@ -109,4 +108,3 @@ public class Main {
             }
         }
     }
-}}
